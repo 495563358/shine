@@ -21,6 +21,7 @@
  *  -------Third party Library-------
  */
 #import <YYKit.h>
+#import <SVProgressHUD.h>
 
 /**
  *  -------Configuration information file-------

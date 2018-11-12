@@ -45,14 +45,12 @@
                 self.downBtn.alpha = 0.78f;
                 self.descLabel.alpha = 0.78f;
                 self.backBtn.alpha = 0.78f;
-                self.downText.alpha = 1;
             }else{
                 self.line.alpha = 0;
                 self.downLabel.alpha = 0;
                 self.downBtn.alpha = 0;
                 self.descLabel.alpha = 0;
                 self.backBtn.alpha = 0;
-                self.downText.alpha = 0;
             }
         }];
     }]];

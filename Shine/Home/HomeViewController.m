@@ -8,7 +8,8 @@
 
 #import "HomeViewController.h"
 #import "SelectThemeColorView.h"
-#import "Recommend/Controller/RecommendViewController.h"
+#import "Recommend/Controller/RecommendViewController.h"//推荐首页
+#import "WallpaperClassifyController.h"//壁纸首页
 
 @interface HomeViewController ()
 /*
@@ -71,8 +72,14 @@
         _scrollView.contentSize = CGSizeMake(ScreenWidth * 3, ScreenHeight - SafeAreaTopHeight);
         RecommendViewController *recommend = [RecommendViewController new];
         [self addChildViewController:recommend];
-        recommend.view.frame = _scrollView.frame;
+        recommend.view.frame = CGRectMake(ScreenWidth, 0, ScreenWidth, ScreenHeight - SafeAreaTopHeight);
         [_scrollView addSubview:recommend.view];
+        
+        WallpaperClassifyController *wallpaper = [WallpaperClassifyController new];
+        [self addChildViewController:wallpaper];
+        wallpaper.view.frame = CGRectMake(ScreenWidth * 2, 0, ScreenWidth, ScreenHeight - SafeAreaTopHeight);
+        
+        [_scrollView addSubview:wallpaper.view];
     }
     return _scrollView;
 }
@@ -106,15 +113,16 @@
 }
 
 - (void)clickTitleAtIndex:(NSInteger)index {
-    
+    //1.改变按钮颜色
     for (UIButton *btn in self.datas) {
         [btn setTitleColor:COLOR_NULL_3 forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:FONT_SIZE_3];
     }
-    
     UIButton *selectBtn = self.datas[index];
     [selectBtn setTitleColor:[AppUtills getThemeColor] forState:UIControlStateNormal];
     selectBtn.titleLabel.font = [UIFont systemFontOfSize:FONT_SIZE_1];
+    //2.scrollview偏移
+    [self.scrollView setContentOffset:CGPointMake(index * ScreenWidth, 0) animated:YES];
     
 }
 

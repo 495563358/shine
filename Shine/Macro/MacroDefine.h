@@ -20,5 +20,7 @@
 //主屏幕
 #define KeyWindow [UIApplication sharedApplication].keyWindow
 
+#define Space_CollectView 5
+
 
 #endif /* MacroDefine_h */

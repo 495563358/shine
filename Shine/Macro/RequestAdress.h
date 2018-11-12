@@ -11,4 +11,6 @@
 
 #define Adress_HomeRecommend    @"http://chanyouji.com/api/pictorials/"
 
+#define Adress_WallpaperClassify @"http://paper-cdn.2q10.com/api/list/paper_plus_best"
+
 #endif /* RequestAdress_h */

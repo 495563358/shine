@@ -34,6 +34,12 @@
 		FA8B33A6218AAD380010142A /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B33A5218AAD380010142A /* UIView+Util.m */; };
 		FA8B33AA218ACDE70010142A /* SelectThemeColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B33A9218ACDE70010142A /* SelectThemeColorView.m */; };
 		FA8B33AC218ACDFF0010142A /* SelectThemeColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8B33AB218ACDFF0010142A /* SelectThemeColorView.xib */; };
+		FADE65F4219968F5007F63F9 /* WallpaperListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65F3219968F5007F63F9 /* WallpaperListController.m */; };
+		FADE65F721996DBB007F63F9 /* WallpaperClassifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65F621996DBB007F63F9 /* WallpaperClassifyController.m */; };
+		FADE65FB219970E1007F63F9 /* WallpaperClassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65FA219970E1007F63F9 /* WallpaperClassifyModel.m */; };
+		FADE65FE219980EB007F63F9 /* WallpaperDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65FD219980EB007F63F9 /* WallpaperDetailModel.m */; };
+		FADE660321998726007F63F9 /* WallPaperClassifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE660121998726007F63F9 /* WallPaperClassifyCell.m */; };
+		FADE660421998726007F63F9 /* WallPaperClassifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADE660221998726007F63F9 /* WallPaperClassifyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +120,17 @@
 		FA8B33A8218ACDE70010142A /* SelectThemeColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectThemeColorView.h; sourceTree = "<group>"; };
 		FA8B33A9218ACDE70010142A /* SelectThemeColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectThemeColorView.m; sourceTree = "<group>"; };
 		FA8B33AB218ACDFF0010142A /* SelectThemeColorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectThemeColorView.xib; sourceTree = "<group>"; };
+		FADE65F2219968F5007F63F9 /* WallpaperListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperListController.h; sourceTree = "<group>"; };
+		FADE65F3219968F5007F63F9 /* WallpaperListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallpaperListController.m; sourceTree = "<group>"; };
+		FADE65F521996DBB007F63F9 /* WallpaperClassifyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperClassifyController.h; sourceTree = "<group>"; };
+		FADE65F621996DBB007F63F9 /* WallpaperClassifyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallpaperClassifyController.m; sourceTree = "<group>"; };
+		FADE65F9219970E1007F63F9 /* WallpaperClassifyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperClassifyModel.h; sourceTree = "<group>"; };
+		FADE65FA219970E1007F63F9 /* WallpaperClassifyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallpaperClassifyModel.m; sourceTree = "<group>"; };
+		FADE65FC219980EB007F63F9 /* WallpaperDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperDetailModel.h; sourceTree = "<group>"; };
+		FADE65FD219980EB007F63F9 /* WallpaperDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallpaperDetailModel.m; sourceTree = "<group>"; };
+		FADE660021998726007F63F9 /* WallPaperClassifyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallPaperClassifyCell.h; sourceTree = "<group>"; };
+		FADE660121998726007F63F9 /* WallPaperClassifyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallPaperClassifyCell.m; sourceTree = "<group>"; };
+		FADE660221998726007F63F9 /* WallPaperClassifyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallPaperClassifyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +336,7 @@
 				FA8B3394218996450010142A /* HomeViewController.h */,
 				FA8B3395218996450010142A /* HomeViewController.m */,
 				FA42FDF12193D9A900F1C3A6 /* Recommend */,
+				FADE65F02199655B007F63F9 /* Wallpaper */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -366,6 +384,48 @@
 				FA8B33AB218ACDFF0010142A /* SelectThemeColorView.xib */,
 			);
 			path = ThemeColorView;
+			sourceTree = "<group>";
+		};
+		FADE65F02199655B007F63F9 /* Wallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				FADE65F12199659A007F63F9 /* Controller */,
+				FADE65F8219970A9007F63F9 /* Model */,
+				FADE65FF219986D5007F63F9 /* View */,
+			);
+			path = Wallpaper;
+			sourceTree = "<group>";
+		};
+		FADE65F12199659A007F63F9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FADE65F521996DBB007F63F9 /* WallpaperClassifyController.h */,
+				FADE65F621996DBB007F63F9 /* WallpaperClassifyController.m */,
+				FADE65F2219968F5007F63F9 /* WallpaperListController.h */,
+				FADE65F3219968F5007F63F9 /* WallpaperListController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FADE65F8219970A9007F63F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FADE65F9219970E1007F63F9 /* WallpaperClassifyModel.h */,
+				FADE65FA219970E1007F63F9 /* WallpaperClassifyModel.m */,
+				FADE65FC219980EB007F63F9 /* WallpaperDetailModel.h */,
+				FADE65FD219980EB007F63F9 /* WallpaperDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FADE65FF219986D5007F63F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FADE660021998726007F63F9 /* WallPaperClassifyCell.h */,
+				FADE660121998726007F63F9 /* WallPaperClassifyCell.m */,
+				FADE660221998726007F63F9 /* WallPaperClassifyCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +533,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADE660421998726007F63F9 /* WallPaperClassifyCell.xib in Resources */,
 				FA8B33642189902F0010142A /* LaunchScreen.storyboard in Resources */,
 				FA8B33AC218ACDFF0010142A /* SelectThemeColorView.xib in Resources */,
 				FA8B33612189902F0010142A /* Assets.xcassets in Resources */,
@@ -549,6 +610,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADE65F721996DBB007F63F9 /* WallpaperClassifyController.m in Sources */,
 				FA8B33A6218AAD380010142A /* UIView+Util.m in Sources */,
 				FA8B33A3218A98250010142A /* UILabel+Util.m in Sources */,
 				FA8B338F218993920010142A /* VBBaseNavigationController.m in Sources */,
@@ -558,9 +620,12 @@
 				FA8B339A2189A00D0010142A /* AppUtills.m in Sources */,
 				FA8B33592189902D0010142A /* AppDelegate.m in Sources */,
 				FA42FE0A21941C4B00F1C3A6 /* NSDateFormatter+Category.m in Sources */,
+				FADE65FB219970E1007F63F9 /* WallpaperClassifyModel.m in Sources */,
 				FA42FE0E219420D400F1C3A6 /* RecommendModel.m in Sources */,
+				FADE660321998726007F63F9 /* WallPaperClassifyCell.m in Sources */,
 				FA42FE042194128B00F1C3A6 /* NetworkingTool.m in Sources */,
 				FA42FE172194340A00F1C3A6 /* UIScrollView+Util.m in Sources */,
+				FADE65F4219968F5007F63F9 /* WallpaperListController.m in Sources */,
 				FA42FE1D2195627C00F1C3A6 /* RecommendDetailCtr.m in Sources */,
 				FA42FE002193DDD000F1C3A6 /* NewPagedFlowView.m in Sources */,
 				FA42FE162194340A00F1C3A6 /* UIImageView+Util.m in Sources */,
@@ -569,6 +634,7 @@
 				FA8B33A02189AA240010142A /* UIButton+Util.m in Sources */,
 				FA8B3396218996450010142A /* HomeViewController.m in Sources */,
 				FA42FDF72193DAE900F1C3A6 /* RecommendViewController.m in Sources */,
+				FADE65FE219980EB007F63F9 /* WallpaperDetailModel.m in Sources */,
 				FA8B33932189961B0010142A /* VBBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,6 +34,8 @@
 		FA8B33A6218AAD380010142A /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B33A5218AAD380010142A /* UIView+Util.m */; };
 		FA8B33AA218ACDE70010142A /* SelectThemeColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B33A9218ACDE70010142A /* SelectThemeColorView.m */; };
 		FA8B33AC218ACDFF0010142A /* SelectThemeColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8B33AB218ACDFF0010142A /* SelectThemeColorView.xib */; };
+		FAA8DF23219A803E00F5E2D6 /* WallClassifyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8DF21219A803E00F5E2D6 /* WallClassifyHeaderView.m */; };
+		FAA8DF24219A803E00F5E2D6 /* WallClassifyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8DF22219A803E00F5E2D6 /* WallClassifyHeaderView.xib */; };
 		FADE65F4219968F5007F63F9 /* WallpaperListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65F3219968F5007F63F9 /* WallpaperListController.m */; };
 		FADE65F721996DBB007F63F9 /* WallpaperClassifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65F621996DBB007F63F9 /* WallpaperClassifyController.m */; };
 		FADE65FB219970E1007F63F9 /* WallpaperClassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65FA219970E1007F63F9 /* WallpaperClassifyModel.m */; };
@@ -120,6 +122,9 @@
 		FA8B33A8218ACDE70010142A /* SelectThemeColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectThemeColorView.h; sourceTree = "<group>"; };
 		FA8B33A9218ACDE70010142A /* SelectThemeColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectThemeColorView.m; sourceTree = "<group>"; };
 		FA8B33AB218ACDFF0010142A /* SelectThemeColorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectThemeColorView.xib; sourceTree = "<group>"; };
+		FAA8DF20219A803E00F5E2D6 /* WallClassifyHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallClassifyHeaderView.h; sourceTree = "<group>"; };
+		FAA8DF21219A803E00F5E2D6 /* WallClassifyHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallClassifyHeaderView.m; sourceTree = "<group>"; };
+		FAA8DF22219A803E00F5E2D6 /* WallClassifyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallClassifyHeaderView.xib; sourceTree = "<group>"; };
 		FADE65F2219968F5007F63F9 /* WallpaperListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperListController.h; sourceTree = "<group>"; };
 		FADE65F3219968F5007F63F9 /* WallpaperListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallpaperListController.m; sourceTree = "<group>"; };
 		FADE65F521996DBB007F63F9 /* WallpaperClassifyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperClassifyController.h; sourceTree = "<group>"; };
@@ -424,6 +429,9 @@
 				FADE660021998726007F63F9 /* WallPaperClassifyCell.h */,
 				FADE660121998726007F63F9 /* WallPaperClassifyCell.m */,
 				FADE660221998726007F63F9 /* WallPaperClassifyCell.xib */,
+				FAA8DF20219A803E00F5E2D6 /* WallClassifyHeaderView.h */,
+				FAA8DF21219A803E00F5E2D6 /* WallClassifyHeaderView.m */,
+				FAA8DF22219A803E00F5E2D6 /* WallClassifyHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -537,6 +545,7 @@
 				FA8B33642189902F0010142A /* LaunchScreen.storyboard in Resources */,
 				FA8B33AC218ACDFF0010142A /* SelectThemeColorView.xib in Resources */,
 				FA8B33612189902F0010142A /* Assets.xcassets in Resources */,
+				FAA8DF24219A803E00F5E2D6 /* WallClassifyHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +627,7 @@
 				FA42FE0B21941C4B00F1C3A6 /* NSDate+Category.m in Sources */,
 				FA8B33AA218ACDE70010142A /* SelectThemeColorView.m in Sources */,
 				FA8B339A2189A00D0010142A /* AppUtills.m in Sources */,
+				FAA8DF23219A803E00F5E2D6 /* WallClassifyHeaderView.m in Sources */,
 				FA8B33592189902D0010142A /* AppDelegate.m in Sources */,
 				FA42FE0A21941C4B00F1C3A6 /* NSDateFormatter+Category.m in Sources */,
 				FADE65FB219970E1007F63F9 /* WallpaperClassifyModel.m in Sources */,

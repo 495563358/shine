@@ -1,17 +1,17 @@
 //
-//  WallpaperListController.h
+//  WallClassifyHeaderView.h
 //  Shine
 //
-//  Created by oops on 2018/11/12.
+//  Created by oops on 2018/11/13.
 //  Copyright © 2018 oops. All rights reserved.
 //
 
-#import "VBBaseViewController.h"
+#import <UIKit/UIKit.h>
 #import "WallpaperClassifyModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WallpaperListController : VBBaseViewController
+@interface WallClassifyHeaderView : UICollectionReusableView
 
 @property (nonatomic,weak)WallpaperClassifyModel *model;
 

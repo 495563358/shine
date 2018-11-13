@@ -7,6 +7,7 @@
 //
 
 #import "WallpaperClassifyController.h"
+#import "WallpaperListController.h"
 
 //Model
 #import "WallpaperClassifyModel.h"
@@ -14,6 +15,7 @@
 
 //View
 #import "WallPaperClassifyCell.h"
+#import "WallClassifyHeaderView.h"
 
 @interface WallpaperClassifyController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collectionView;
@@ -41,12 +43,13 @@
     CGFloat itemW = (ScreenWidth - Space_CollectView * 4)/3.0;
     CGFloat itemH = itemW * 667/375;
     layout.itemSize = CGSizeMake(itemW, itemH);
+    layout.sectionInset = UIEdgeInsetsMake(0, Space_CollectView, 0, 0);
     layout.minimumLineSpacing = Space_CollectView;
-    
+    layout.minimumInteritemSpacing = Space_CollectView;
     /*
      构造collectionView
      */
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - SafeAreaTopHeight) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight - SafeAreaTopHeight - SafeAreaBottomHeight) collectionViewLayout:layout];
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
@@ -54,6 +57,9 @@
     _collectionView.showsVerticalScrollIndicator = NO;
     //注册Cell
     [_collectionView registerNib:[UINib nibWithNibName:@"WallPaperClassifyCell" bundle:nil] forCellWithReuseIdentifier:@"collectcell"];
+    //注册header
+    [_collectionView registerNib:[UINib nibWithNibName:@"WallClassifyHeaderView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"collectheader"];
+    
     [self.view addSubview:_collectionView];
 }
 
@@ -89,6 +95,15 @@
     return model.thumbs.count;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(ScreenWidth, ScreenWidth*0.15);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 0, 5);//分别为上、左、下、右
+}
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     WallPaperClassifyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"collectcell" forIndexPath:indexPath];
     WallpaperClassifyModel *model = _dataArray[indexPath.section];
@@ -96,10 +111,30 @@
     return cell;
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    NSLog(@"")
-    WallpaperClassifyModel *model = self.dataArray[0];
+//headerView
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    WallClassifyHeaderView *headerview = nil;
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        headerview = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"collectheader" forIndexPath:indexPath];
+        
+        WallpaperClassifyModel *model = self.dataArray[indexPath.section];
+        headerview.model = model;
+    }
+    return headerview;
     
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    WallpaperListController *paperList = [WallpaperListController new];
+    paperList.model = _dataArray[indexPath.section];
+    
+    CATransition *trans = [CATransition animation];
+    trans.type = @"cube";//rippleEffect
+    trans.subtype = kCATransitionFromRight;
+    trans.duration = 1.0f;
+    
+    [self.navigationController.view.layer addAnimation:trans forKey:nil];
+    [self.navigationController pushViewController:paperList animated:YES];
 }
 
 /*

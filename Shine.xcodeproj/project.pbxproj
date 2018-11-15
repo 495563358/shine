@@ -19,6 +19,7 @@
 		FA42FE162194340A00F1C3A6 /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42FE142194340A00F1C3A6 /* UIImageView+Util.m */; };
 		FA42FE172194340A00F1C3A6 /* UIScrollView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42FE152194340A00F1C3A6 /* UIScrollView+Util.m */; };
 		FA42FE1D2195627C00F1C3A6 /* RecommendDetailCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = FA42FE1C2195627C00F1C3A6 /* RecommendDetailCtr.m */; };
+		FA78C28E219C0A7D00523F5F /* WallpaperController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA78C28D219C0A7D00523F5F /* WallpaperController.m */; };
 		FA8B33592189902D0010142A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8B33582189902D0010142A /* AppDelegate.m */; };
 		FA8B33612189902F0010142A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA8B33602189902F0010142A /* Assets.xcassets */; };
 		FA8B33642189902F0010142A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8B33622189902F0010142A /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 		FA8B33AC218ACDFF0010142A /* SelectThemeColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8B33AB218ACDFF0010142A /* SelectThemeColorView.xib */; };
 		FAA8DF23219A803E00F5E2D6 /* WallClassifyHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA8DF21219A803E00F5E2D6 /* WallClassifyHeaderView.m */; };
 		FAA8DF24219A803E00F5E2D6 /* WallClassifyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA8DF22219A803E00F5E2D6 /* WallClassifyHeaderView.xib */; };
+		FADBB647219D5419004B8274 /* QYAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FADBB646219D5419004B8274 /* QYAnnotation.m */; };
 		FADE65F4219968F5007F63F9 /* WallpaperListController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65F3219968F5007F63F9 /* WallpaperListController.m */; };
 		FADE65F721996DBB007F63F9 /* WallpaperClassifyController.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65F621996DBB007F63F9 /* WallpaperClassifyController.m */; };
 		FADE65FB219970E1007F63F9 /* WallpaperClassifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FADE65FA219970E1007F63F9 /* WallpaperClassifyModel.m */; };
@@ -88,6 +90,8 @@
 		FA42FE152194340A00F1C3A6 /* UIScrollView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Util.m"; sourceTree = "<group>"; };
 		FA42FE1B2195627C00F1C3A6 /* RecommendDetailCtr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecommendDetailCtr.h; sourceTree = "<group>"; };
 		FA42FE1C2195627C00F1C3A6 /* RecommendDetailCtr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecommendDetailCtr.m; sourceTree = "<group>"; };
+		FA78C28C219C0A7D00523F5F /* WallpaperController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperController.h; sourceTree = "<group>"; };
+		FA78C28D219C0A7D00523F5F /* WallpaperController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallpaperController.m; sourceTree = "<group>"; };
 		FA8B33542189902D0010142A /* Shine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8B33572189902D0010142A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FA8B33582189902D0010142A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 		FAA8DF20219A803E00F5E2D6 /* WallClassifyHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallClassifyHeaderView.h; sourceTree = "<group>"; };
 		FAA8DF21219A803E00F5E2D6 /* WallClassifyHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallClassifyHeaderView.m; sourceTree = "<group>"; };
 		FAA8DF22219A803E00F5E2D6 /* WallClassifyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallClassifyHeaderView.xib; sourceTree = "<group>"; };
+		FADBB645219D5419004B8274 /* QYAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYAnnotation.h; sourceTree = "<group>"; };
+		FADBB646219D5419004B8274 /* QYAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYAnnotation.m; sourceTree = "<group>"; };
 		FADE65F2219968F5007F63F9 /* WallpaperListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperListController.h; sourceTree = "<group>"; };
 		FADE65F3219968F5007F63F9 /* WallpaperListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WallpaperListController.m; sourceTree = "<group>"; };
 		FADE65F521996DBB007F63F9 /* WallpaperClassifyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperClassifyController.h; sourceTree = "<group>"; };
@@ -408,6 +414,8 @@
 				FADE65F621996DBB007F63F9 /* WallpaperClassifyController.m */,
 				FADE65F2219968F5007F63F9 /* WallpaperListController.h */,
 				FADE65F3219968F5007F63F9 /* WallpaperListController.m */,
+				FA78C28C219C0A7D00523F5F /* WallpaperController.h */,
+				FA78C28D219C0A7D00523F5F /* WallpaperController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -419,6 +427,8 @@
 				FADE65FA219970E1007F63F9 /* WallpaperClassifyModel.m */,
 				FADE65FC219980EB007F63F9 /* WallpaperDetailModel.h */,
 				FADE65FD219980EB007F63F9 /* WallpaperDetailModel.m */,
+				FADBB645219D5419004B8274 /* QYAnnotation.h */,
+				FADBB646219D5419004B8274 /* QYAnnotation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -619,6 +629,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA78C28E219C0A7D00523F5F /* WallpaperController.m in Sources */,
 				FADE65F721996DBB007F63F9 /* WallpaperClassifyController.m in Sources */,
 				FA8B33A6218AAD380010142A /* UIView+Util.m in Sources */,
 				FA8B33A3218A98250010142A /* UILabel+Util.m in Sources */,
@@ -634,6 +645,7 @@
 				FA42FE0E219420D400F1C3A6 /* RecommendModel.m in Sources */,
 				FADE660321998726007F63F9 /* WallPaperClassifyCell.m in Sources */,
 				FA42FE042194128B00F1C3A6 /* NetworkingTool.m in Sources */,
+				FADBB647219D5419004B8274 /* QYAnnotation.m in Sources */,
 				FA42FE172194340A00F1C3A6 /* UIScrollView+Util.m in Sources */,
 				FADE65F4219968F5007F63F9 /* WallpaperListController.m in Sources */,
 				FA42FE1D2195627C00F1C3A6 /* RecommendDetailCtr.m in Sources */,

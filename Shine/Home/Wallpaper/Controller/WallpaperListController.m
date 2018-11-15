@@ -8,6 +8,8 @@
 
 #import "WallpaperListController.h"
 
+#import "WallpaperController.h"     //壁纸详情页
+
 #import "WallpaperDetailModel.h"
 
 #import "WallPaperClassifyCell.h"
@@ -113,6 +115,13 @@
     WallpaperDetailModel *model = _mdataArr[indexPath.row];
     [cell.urlimageView setImageURL:[NSURL URLWithString:model.thumb]];
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    WallpaperDetailModel *model = _mdataArr[indexPath.row];
+    WallpaperController *paperCtr = [WallpaperController new];
+    paperCtr.model = model;
+    [self.navigationController presentViewController:paperCtr animated:YES completion:nil];
 }
 
 //动画效果

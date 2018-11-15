@@ -65,6 +65,22 @@
 }
 
 - (void)loadProgressImageWithUrl:(NSString *)imgUrl complete:(void (^)(void))complete {
+    
+    
+    [self sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"启"] options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SVProgressHUD showProgress:receivedSize/expectedSize status:@"加载中"];
+        });
+        
+    } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        [SVProgressHUD dismiss];
+        if (complete) {
+            complete();
+        }
+    }];
+    
+    
 //    __block DDCircleProgressView *progressView = [[DDCircleProgressView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    progressView.center = self.center;
 //    [self addSubview:progressView];

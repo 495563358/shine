@@ -27,7 +27,7 @@
     
     NSDate *today = [NSDate date];
     NSTimeInterval oneDay = 24 * 60 * 60;
-    NSDate *wantDate = [today initWithTimeIntervalSinceNow:-(count * oneDay)];
+    NSDate *wantDate = [today initWithTimeIntervalSinceNow:(count * oneDay)];
     
     return [wantDate stringFromDate];
 }

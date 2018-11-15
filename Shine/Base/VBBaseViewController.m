@@ -24,7 +24,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)reloadThemeColor {
+- (void)reloadThemeColor{
     
 }
 

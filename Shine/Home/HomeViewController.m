@@ -108,7 +108,7 @@
 }
 
 - (void)reloadAppColor{
-    [self clickTitleAtIndex:2];
+    [self clickTitleAtIndex:1];
     [self.colorLabel.superview setThemeBGColor];
 }
 

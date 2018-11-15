@@ -71,7 +71,7 @@
         _loadfail.center = CGPointMake(self.pageView.width/2, self.pageView.height/2);
         _loadfail.userInteractionEnabled = YES;
         [_loadfail addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
-            [self loadData:[NSDate today]];
+            [self loadData];
         }]];
         _loadfail.hidden = YES;
         [self.pageView addSubview:_loadfail];
@@ -94,8 +94,7 @@
     [self.view addSubview:self.pageView];
     
     [self reloadThemeColor];
-    [self loadData:[NSDate today]];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadThemeColor) name:@"change_theme_color" object:nil];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 block:^(NSTimer * _Nonnull timer) {
         
         NSCalendar *celendar = [NSCalendar currentCalendar];//创建一个日历对象
@@ -150,9 +149,8 @@
                     
                     NSLog(@"进入到新页面 = %@",change[@"new"]);
                     
-                    NSString *day = [NSDate dateFromDay:self.dayindex + 1];
-                    
-                    [self loadData:day];
+                    self.dayindex --;
+                    [self loadData];
                     
                 }
             }
@@ -179,7 +177,9 @@
     }
 }
 
-- (void)reloadThemeColor {
+- (void)reloadThemeColor{
+    
+    [self loadData];
     //加载动画颜色
     [self.loadingView setThemeBGColor];
     //加载失败颜色
@@ -188,7 +188,7 @@
     self.timeLabel.backgroundColor = [[AppUtills getThemeColor] colorWithAlphaComponent:0.64];
 }
 
--(void)loadData:(NSString *)currentdate{
+-(void)loadData{
     //加载未完成前不允许再加载
     self.flag_pop = NO;
     //打开加载动画,请求资源
@@ -199,7 +199,7 @@
         self.loadingView.left = ScreenWidth;
     } completion:nil];
     
-    NSString *urlstr = [NSString stringWithFormat:@"%@%@.json",Adress_HomeRecommend,currentdate];
+    NSString *urlstr = [NSString stringWithFormat:@"%@%@.json",Adress_HomeRecommend,[NSDate dateFromDay:self.dayindex]];
     
     NSLog(@"ScreenHeight = %f ScreenWidth = %f\nadress = %@",ScreenHeight,ScreenWidth,urlstr);
     [[NetworkingTool sharedManager] GET:urlstr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -227,7 +227,6 @@
         self.loadingView.hidden = YES;
         //加载完成 打开加载开关
         self.flag_pop = YES;
-        self.dayindex ++;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         self.loadfail.hidden = NO;
@@ -280,12 +279,12 @@
         
         __block CGFloat pic_y = 96;
         //日
-        UILabel *dayLabel = [UILabel labelWithText:[[NSDate dateFromDay:(int)index] day] fontSize:64 frame:CGRectMake(12, pic_y, 0, 0) color:[AppUtills getThemeColor] textAlignment:NSTextAlignmentLeft];
+        UILabel *dayLabel = [UILabel labelWithText:[[NSDate dateFromDay:self.dayindex] day] fontSize:64 frame:CGRectMake(12, pic_y, 0, 0) color:[AppUtills getThemeColor] textAlignment:NSTextAlignmentLeft];
         [dayLabel sizeToFit];
         [view addSubview:dayLabel];
         
         //月
-        UILabel *monthLabel = [UILabel labelWithText:[[NSDate dateFromDay:(int)index] month] fontSize:FONT_SIZE_2 frame:CGRectMake(dayLabel.right + 8, pic_y, 0, 0) color:COLOR_NULL_2 textAlignment:NSTextAlignmentLeft];
+        UILabel *monthLabel = [UILabel labelWithText:[[NSDate dateFromDay:self.dayindex] month] fontSize:FONT_SIZE_2 frame:CGRectMake(dayLabel.right + 8, pic_y, 0, 0) color:COLOR_NULL_2 textAlignment:NSTextAlignmentLeft];
         [monthLabel sizeToFit];
         [view addSubview:monthLabel];
         
@@ -296,13 +295,20 @@
         
         __block CGFloat pic_height = view.height - pic_y;
         
-        if(![NSData dataWithContentsOfURL:[NSURL URLWithString:model.ios_wallpaper_url]]){
+        if ([model.ios_wallpaper_url hasPrefix:@"http://cyjm.qiniudn.com/"]) {
             if (self.datas.count > 1) {
                 RecommendModel *secondModel = self.datas[1];
                 NSDictionary *notes = [secondModel.description_notes firstObject];
                 model.ios_wallpaper_url = notes[@"image_url"];
+                
+                
+                
+//                if ([model.ios_wallpaper_url hasPrefix:@"http://cyjm.qiniudn.com/"]) {
+//                    for (NSString *urlstr in <#collection#>) {
+//                        <#statements#>
+//                    }
+//                }
             }
-            
         }
         
         //背景模糊图
